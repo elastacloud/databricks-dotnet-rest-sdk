@@ -1,0 +1,33 @@
+version: "{build}"
+pull_requests:
+  do_not_increment_build_number: true
+skip_tags: true
+image: Visual Studio 2017
+configuration: Release
+platform: Any CPU
+before_build:
+- ps: >-
+    dotnet restore src/Parquet.sln
+
+    cd src/Parquet
+
+    dotnet housework setbuildnumber %CiVersion%  ../../build.ini
+
+    dotnet housework author .\Parquet.csproj  ../../build.ini
+
+    dotnet housework author ..\SharpArrow\SharpArrow.csproj  ../../build.ini
+
+    dotnet housework substitute ThriftFooter.cs ../../build.ini -r
+
+    cd ../..
+build:
+  project: src/Parquet.sln
+  verbosity: minimal
+test_script:
+- cmd: >-
+   dotnet test src\Parquet.Test -c release
+
+   dotnet test src\Parquet.Json.Test -c release
+artifacts:
+- path: src/Parquet/bin/**/*.nupkg
+deploy: off
