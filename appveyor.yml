@@ -7,17 +7,13 @@ configuration: Release
 platform: Any CPU
 before_build:
 - ps: >-
-    dotnet restore src/Parquet.sln
+    dotnet restore src/ElastaCloud.DataBricks.Sdk.sln
 
-    cd src/Parquet
+    cd src/ElastaCloud.DataBricks.Sdk
 
     dotnet housework setbuildnumber %CiVersion%  ../../build.ini
 
-    dotnet housework author .\Parquet.csproj  ../../build.ini
-
-    dotnet housework author ..\SharpArrow\SharpArrow.csproj  ../../build.ini
-
-    dotnet housework substitute ThriftFooter.cs ../../build.ini -r
+    dotnet housework author .\ElastaCloud.DataBricks.Sdk.csproj  ../../build.ini
 
     cd ../..
 build:
