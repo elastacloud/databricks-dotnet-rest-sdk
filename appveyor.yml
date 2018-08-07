@@ -17,13 +17,8 @@ before_build:
 
     cd ../..
 build:
-  project: src/Parquet.sln
+  project: src/ElastaCloud.DataBricks.Sdk.sln
   verbosity: minimal
-test_script:
-- cmd: >-
-   dotnet test src\Parquet.Test -c release
-
-   dotnet test src\Parquet.Json.Test -c release
 artifacts:
-- path: src/Parquet/bin/**/*.nupkg
+- path: src/ElastaCloud.DataBricks.Sdk.sln/bin/**/*.nupkg
 deploy: off
