@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Provides easy to use wrapper over DataBricks REST API 2.0 (https://docs.azuredatabricks.net/api/latest/index.html)</Description>
+    <PackageTags>Azure Databricks REST API</PackageTags>
+    <PackageId>ElastaCloud.DataBricks.Sdk</PackageId>
+    <AssemblyName>ElastaCloud.DataBricks.Sdk</AssemblyName>
+    <RootNamespace>ElastaCloud.DataBricks.Sdk</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\ElastaCloud.DataBricks.Sdk.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\ElastaCloud.DataBricks.Sdk.xml</DocumentationFile>
+  </PropertyGroup>
+
+   <ItemGroup>
+      <DotNetCliToolReference Include="dotnet-housework" Version="0.0.9" />
+   </ItemGroup>
+
+
+   <ItemGroup>
+      <DotNetCliToolReference Include="dotnet-housework" Version="0.0.9" />
+   </ItemGroup>
+
+
+   <ItemGroup>
+     <PackageReference Include="Refit" Version="4.6.30" />
+   </ItemGroup>
+
+</Project>

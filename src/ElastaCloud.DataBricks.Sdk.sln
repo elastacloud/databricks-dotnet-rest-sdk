@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElastaCloud.DataBricks.Sdk", "ElastaCloud.DataBricks.Sdk\ElastaCloud.DataBricks.Sdk.csproj", "{1200BD62-5D30-4D1F-8C22-4C224D3CF099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "sdk", "ElastaCloud.DataBricks.Sdk\sdk.csproj", "{1200BD62-5D30-4D1F-8C22-4C224D3CF099}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEF4B7CC-4849-4050-820D-C52EACA2FCCE}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\build.ini = ..\build.ini
 		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "ElastaCloud.DataBricks.Sdk.IntegrationTests\test.csproj", "{0ECA0D1A-7C37-419B-8A2C-3206118A7EA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{1200BD62-5D30-4D1F-8C22-4C224D3CF099}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1200BD62-5D30-4D1F-8C22-4C224D3CF099}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1200BD62-5D30-4D1F-8C22-4C224D3CF099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ECA0D1A-7C37-419B-8A2C-3206118A7EA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ECA0D1A-7C37-419B-8A2C-3206118A7EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ECA0D1A-7C37-419B-8A2C-3206118A7EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ECA0D1A-7C37-419B-8A2C-3206118A7EA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
