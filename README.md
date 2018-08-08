@@ -18,6 +18,17 @@ Create new token and copy before closing the dialog:
 
 ## Using the SDK
 
+Create an instance of rest client:
+
+```csharp
+DataBricksRestClient _restClient = new DataBricksRestClient("https://northeurope.azuredatabricks.net", "token");
+```
+
+Ready to call an api, for instance to get the list of job runs:
+
+```csharp
+Run[] runs = await _restClient.Jobs.GetRunsAsync();
+```
 
 
 ## Credits
