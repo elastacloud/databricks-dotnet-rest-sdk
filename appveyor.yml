@@ -13,7 +13,7 @@ before_build:
 
     dotnet housework setbuildnumber %CiVersion%  ../../build.ini
 
-    dotnet housework author .\ElastaCloud.DataBricks.Sdk.csproj  ../../build.ini
+    dotnet housework author .\sdk.csproj  ../../build.ini
 
     cd ../..
 build:
