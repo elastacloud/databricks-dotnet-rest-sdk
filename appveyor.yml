@@ -21,4 +21,5 @@ build:
   verbosity: minimal
 artifacts:
 - path: src/ElastaCloud.DataBricks.Sdk/bin/**/*.nupkg
+test: off
 deploy: off
