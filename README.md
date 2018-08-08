@@ -1,4 +1,4 @@
-# DataBricks REST SDK for .NET
+# DataBricks REST SDK for .NET [![NuGet](https://img.shields.io/nuget/v/ElastaCloud.DataBricks.Sdk.svg)](https://www.nuget.org/packages/ElastaCloud.DataBricks.Sdk/)
 
 ![](doc/assets/databricks-small.png)
 
