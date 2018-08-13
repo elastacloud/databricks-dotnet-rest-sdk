@@ -36,7 +36,24 @@ namespace ElastaCloud.DataBricks.Sdk
       {
          RunsResponse response = await _endpoint.GetAllRuns();
 
-         return null;
+         return response.Runs;
+      }
+
+      public async Task<Run> GetRunAsync(long runId)
+      {
+         return await _endpoint.GetRun(runId);
+      }
+
+      /// <summary>
+      /// Submits a new run and returns the run ID.
+      /// </summary>
+      /// <param name="run"></param>
+      /// <returns></returns>
+      public async Task<long> SubmitRunAsync(NewRun run)
+      {
+         SubmitRunResponse response = await _endpoint.SubmitRun(run);
+
+         return response.RunId;
       }
    }
 }

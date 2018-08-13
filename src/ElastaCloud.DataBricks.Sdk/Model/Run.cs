@@ -43,7 +43,11 @@ namespace ElastaCloud.DataBricks.Sdk.Model
       [JsonProperty("state")]
       public RunState RunState { get; set; }
 
-      //todo: schedule
+      /// <summary>
+      /// The cron schedule that triggered this run if it was triggered by the periodic scheduler.
+      /// </summary>
+      [JsonProperty("schedule")]
+      public CronSchedule CronSchedule { get; set; }
 
       //todo: task
 

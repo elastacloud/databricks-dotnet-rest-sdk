@@ -47,7 +47,8 @@ namespace ElastaCloud.DataBricks.Sdk
             {
                JsonSerializerSettings = new JsonSerializerSettings
                {
-                  Converters = { new StringEnumConverter() }
+                  Converters = { new StringEnumConverter() },
+                  NullValueHandling = NullValueHandling.Ignore
                }
             });
 

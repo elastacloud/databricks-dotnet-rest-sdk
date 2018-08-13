@@ -13,6 +13,12 @@ namespace ElastaCloud.DataBricks.Sdk
 
       [Get("/api/2.0/jobs/runs/list")]
       Task<RunsResponse> GetAllRuns();
+
+      [Get("/api/2.0/jobs/runs/get")]
+      Task<Run> GetRun([AliasAs("run_id")] long runId);
+
+      [Post("/api/2.0/jobs/runs/submit")]
+      Task<SubmitRunResponse> SubmitRun([Body] NewRun newRun);
    }
 
    #region [ Wrappers ]
@@ -30,6 +36,12 @@ namespace ElastaCloud.DataBricks.Sdk
 
       [JsonProperty("has_more")]
       public bool HasMore { get; set; }
+   }
+
+   class SubmitRunResponse
+   {
+      [JsonProperty("run_id")]
+      public long RunId { get; set; }
    }
 
    #endregion
