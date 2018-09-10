@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -22,6 +23,11 @@ namespace ElastaCloud.DataBricks.Sdk
       /// Jobs API
       /// </summary>
       public DataBricksJobsRestClient Jobs { get; }
+
+      static DataBricksRestClient()
+      {
+         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+      }
 
       /// <summary>
       /// Creates an instance

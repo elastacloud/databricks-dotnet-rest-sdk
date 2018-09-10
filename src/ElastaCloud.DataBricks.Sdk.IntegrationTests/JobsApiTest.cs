@@ -21,7 +21,7 @@ namespace ElastaCloud.DataBricks.Sdk.IntegrationTests
       }
 
       [Fact]
-      public async Task Submit_run()
+      public async Task Submit_run_to_new_cluster()
       {
          var newRun = new NewRun
          {
@@ -48,6 +48,33 @@ namespace ElastaCloud.DataBricks.Sdk.IntegrationTests
          long runId = await Client.Jobs.SubmitRunAsync(newRun);
 
          Run run = await Client.Jobs.GetRunAsync(runId);
+         Assert.NotNull(run);
+      }
+
+      [Fact]
+      public async Task Submit_run_to_existing_cluster()
+      {
+         var newRun = new NewRun
+         {
+            ExistingClusterId = "1",
+            /*Libraries = new List<Dictionary<string, string>>
+            {
+               new Dictionary<string, string>
+               {
+                  ["jar"] = "dbfs:/FileStore/jars/1796537b_8feb_43d1_bf5e_9236672fd184-dataquality.jar"
+               }
+            },*/
+            NotebookTask = new NotebookTask
+            {
+               Path = "/hello",
+               Parameters = new[] { new ParamPair("key1", "value1"), new ParamPair("key2", "value2") }
+            }
+         };
+
+         long runId = await Client.Jobs.SubmitRunAsync(newRun);
+
+         Run run = await Client.Jobs.GetRunAsync(runId);
+         Assert.NotNull(run);
       }
    }
 }
