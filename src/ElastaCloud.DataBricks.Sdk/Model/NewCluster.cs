@@ -30,5 +30,11 @@ namespace ElastaCloud.DataBricks.Sdk.Model
       /// </summary>
       [JsonProperty("node_type_id")]
       public string NodeTypeId { get; set; }
+
+      /// <summary>
+      /// this field reflects the desired number of workers rather than the actual current number of workers. For instance, if a cluster is resized from 5 to 10 workers, this field will immediately be updated to reflect the target size of 10 workers, whereas the workers listed in spark_info will gradually increase from 5 to 10 as the new nodes are provisioned.
+      /// </summary>
+      [JsonProperty("autoscale")]
+      public Autoscale Autoscale { get; set; }
    }
 }
