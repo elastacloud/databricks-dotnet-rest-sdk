@@ -101,7 +101,7 @@ namespace ElastaCloud.DataBricks.Sdk.IntegrationTests
             },
             NotebookTask = new NotebookTask
             {
-               Path = "/BounceTest/BounceTest",
+               Path = "QATestPHLRules/PHLTestRules",
               // Parameters = new[] { }
             }
          };

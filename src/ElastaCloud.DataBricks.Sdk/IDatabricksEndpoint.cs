@@ -23,6 +23,15 @@ namespace ElastaCloud.DataBricks.Sdk
 
    #region [ Wrappers ]
 
+   class ErrorDetails
+   {
+      [JsonProperty("error_code")]
+      public string ErrorCode { get; set; }
+
+      [JsonProperty("message")]
+      public string Message { get; set; }
+   }
+
    class JobsResponse
    {
       [JsonProperty("jobs")]

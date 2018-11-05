@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using ElastaCloud.DataBricks.Sdk.Model;
+using Newtonsoft.Json;
+using Refit;
 
 namespace ElastaCloud.DataBricks.Sdk
 {
@@ -51,9 +53,18 @@ namespace ElastaCloud.DataBricks.Sdk
       /// <returns></returns>
       public async Task<long> SubmitRunAsync(NewRun run)
       {
-         SubmitRunResponse response = await _endpoint.SubmitRun(run);
+         try
+         {
+            SubmitRunResponse response = await _endpoint.SubmitRun(run);
 
-         return response.RunId;
+            return response.RunId;
+         }
+         catch(ApiException ex)
+         {
+            ErrorDetails errorDetails = JsonConvert.DeserializeObject<ErrorDetails>(ex.Content);
+
+            throw new DataBricksException(errorDetails.ErrorCode, errorDetails.Message);
+         }
       }
    }
 }
